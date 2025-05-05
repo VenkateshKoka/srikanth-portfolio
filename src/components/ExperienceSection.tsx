@@ -36,7 +36,7 @@ const ExperienceCard: React.FC<{ experience: WorkExperience }> = ({
           <span>{experience.company}</span>
           <span className="hidden sm:inline">•</span>
           <span className="flex items-center gap-1">
-            <MapPin size={14} className="inline-block" /> {experience.location}
+            <MapPin size={14} className="inline-block" />{" "}
           </span>
           <span className="hidden sm:inline">•</span>
           <span>{experience.duration}</span>

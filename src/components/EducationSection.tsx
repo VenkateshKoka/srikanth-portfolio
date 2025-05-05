@@ -9,10 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MapPin, GraduationCap, Calendar } from "lucide-react";
+import { MapPin, GraduationCap } from "lucide-react";
 
 const EducationSection: React.FC = () => {
-  const { institution, degree, duration, location } = resumeData.education;
+  const { institution, degree, duration } = resumeData.education;
 
   if (!institution || !degree) {
     return null;
@@ -100,7 +100,6 @@ const EducationSection: React.FC = () => {
                   <span className="hidden sm:inline text-cyan-500">•</span>
                   <span className="flex items-center gap-1 text-sm">
                     <MapPin size={14} className="inline-block text-gray-400" />{" "}
-                    {location}
                   </span>
                   <span className="hidden sm:inline text-cyan-500">•</span>
                   <span className="text-gray-400 italic">{duration}</span>

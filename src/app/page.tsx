@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
-import CertificationsInternshipsSection from "@/components/CertificationsInternshipsSection";
 
 export default function Home() {
   return (

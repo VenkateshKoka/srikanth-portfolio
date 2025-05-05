@@ -1,34 +1,54 @@
 // import { type } from "os"; // Remove unused import
 
+// Define interfaces for structured data
+export interface ContactInfo {
+  email: string;
+  phone: string;
+  location: string;
+  linkedin: string;
+  github: string;
+}
+
 export interface WorkExperience {
   company: string;
   role: string;
+  location: string; // Added location property
   duration: string;
   points: string[];
 }
 
 export interface Project {
   name: string;
-  duration?: string; // Optional duration
+  client?: string; // Added client property
+  duration?: string;
+  technologies: string[]; // Added technologies property
   points: string[];
 }
 
+export interface Education {
+  institution: string;
+  degree: string;
+  location: string; // Added location property
+  duration: string;
+}
+
+export interface AdditionalInfo {
+  languages: string[];
+  interests: string[];
+}
+
 export interface ResumeData {
-  intro: string;
-  aboutMe: string;
-  workExperience: WorkExperience[];
-  education: {
-    institution: string;
-    degree: string;
-    duration: string;
-    gpa?: string; // Optional GPA
-  };
-  projects: Project[];
-  skills: {
+  name: string; // Changed from intro
+  contact: ContactInfo; // Added contact
+  professionalSummary: string[]; // Changed from aboutMe
+  technicalSkills: {
     [category: string]: string[];
-  };
-  certificates: string[];
-  internships: string[]; // Assuming Internship is separate or could be part of workExperience
+  }; // Changed from skills
+  workExperience: WorkExperience[];
+  education: Education;
+  projects: Project[];
+  additionalInfo: AdditionalInfo; // Added additionalInfo
+  // Removed certificates and internships as they're not used in the new design
 }
 
 export const resumeData: ResumeData = {
@@ -181,32 +201,4 @@ export const resumeData: ResumeData = {
     languages: ["English (Fluent)", "Hindi (Fluent)"],
     interests: ["Open-source contributions", "cloud-native technologies"],
   },
-  skills: {
-    "Programming Languages": ["C", "Python", "SQL"],
-    "Machine Learning & Deep Learning": [
-      "Scikit-learn",
-      "TensorFlow",
-      "Keras",
-      "PyTorch",
-    ],
-    "Data Science & Analytics": ["Pandas", "NumPy", "SciPy", "StatsModels"],
-    "Data Visualization": [
-      "Matplotlib",
-      "Seaborn",
-      "Plotly",
-      "Power BI",
-      "Tableau",
-    ],
-    "Databases & Cloud Technologies": ["MySQL", "Firebase"],
-    "Natural Language Processing": ["spaCy", "NLTK", "Transformers"],
-    "Big Data & Processing": ["Apache Spark", "Dask"],
-    "Development & IDEs": [
-      "Jupyter Notebook",
-      "Google Colab",
-      "VS Code",
-      "PyCharm",
-    ],
-  },
-  certificates: ["Data Science-ExcelR"],
-  internships: ["Intern Ship-ExcelR"], // Assuming this is a separate internship item based on resume
 };
